@@ -39,7 +39,15 @@ The tool provides a **fully functional menu** with the following options:
 
 - Perform a **backup of the users directory** (`/home` on Linux or its Windows equivalent).
 - The backup file will include the **execution date** in its name.
-- The backup script runs **automatically every day at 3:00 a.m.**
+- The backup script runs **automatically every day at 3:00 a.m** using a cron job.
+  To configure a cron job on **Linux**, we use `sudo crontab -e` to open cron config panel and we add the following line:
+
+  ```bash
+  0 3 * * * /usr/local/bin/backup_usuarios_auto.sh
+
+  ```
+
+  On the folder linux, cronJob.sh is the script designed to run automatically when the cron is triggered for creating a `/home` backup.
 
 ### ⏻ Shutdown
 
